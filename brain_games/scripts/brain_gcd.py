@@ -30,29 +30,29 @@ def ask_user():
 
 def compare_answers(counter, user_answer, right_answer, flag=0):
     if user_answer == str(right_answer):
-        print('correct')
+        print('Correct!')
         counter += 1
         return counter, flag
     if user_answer != str(right_answer):
-        print('try again, right answer was {}'.format(right_answer))
         flag = 1
         return counter, flag
 
 
 def main():
-    name = welcome_user()
-    print('Find the greatest common divisor of given numbers.')
-    counter = 0
-    while counter < 3:
-        value1, value2 = get_random_value()
-        make_example(value1, value2)
-        right_answer = nod(value1, value2)
-        user_answer = ask_user()
-        counter, flag = compare_answers(counter, user_answer, right_answer)
-        if counter == 3:
-            print('Congratulations {}'.format(name))
-        if flag == 1:
-            break
+	name = welcome_user()
+	print('Find the greatest common divisor of given numbers.')
+	counter = 0
+	while counter < 3:
+		value1, value2 = get_random_value()
+		make_example(value1, value2)
+		right_answer = nod(value1, value2)
+		user_answer = ask_user()
+		counter, flag = compare_answers(counter, user_answer, right_answer)
+		if counter == 3:
+			print('Congratulations, {}'.format(name))
+		if flag == 1:
+			print("{} is wrong answer ;(. Correct answer was {}. \nLet's try again, {}!".format(user_answer, right_answer, name))
+			break
 
 
 if __name__ == '__main__':

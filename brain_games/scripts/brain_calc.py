@@ -15,7 +15,7 @@ def main():
         user_answer = ask_user()
         counter, flag = compare_answers(counter, user_answer, value_one, value_two, right_answer, random_value, flag)
         if counter == 3:
-            print('Congratulations {}'.format(name))
+            print('Congratulations, {}!'.format(name))
         if flag == 1:
             break
 
@@ -49,19 +49,19 @@ def ask_user():
 
 def compare_answers(counter, user_answer, value_one, value_two, right_answer, random_value, flag):
     if user_answer == str(value_one + value_two) and random_value == 1:
-        print('correct')
+        print('Correct!')
         counter += 1
         return counter, flag
     elif user_answer == str(value_one - value_two) and random_value == 2:
-        print('correct')
+        print('Correct!')
         counter += 1
         return counter, flag
     elif user_answer == str(value_one * value_two) and random_value == 3:
-        print('correct')
+        print('Correct!')
         counter += 1
         return counter, flag
     else:
-        print('try again, right answer was {}'.format(right_answer))
+        print("{} is wrong answer ;(. Correct answer was {}. \nLet's try again, {}!".format(user_answer, right_answer, name))
         flag += 1
         return counter, flag
 

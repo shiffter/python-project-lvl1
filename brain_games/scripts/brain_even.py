@@ -22,7 +22,6 @@ def compare_answers(counter, user_answer, right_answer, flag=0):
         counter += 1
         return counter, flag
     if user_answer not in right_answer:
-        print('Try again, right answer was {}'.format(right_answer[0]))
         flag = 1
         return counter, flag
 
@@ -36,19 +35,21 @@ def play_games(value):
 
 
 def main():
-    name = welcome_user()
-    counter = 0
-    print('Answer "Yes" if given number is even. Otherwise answer "No".')
-    while counter < 3:
-        value = get_random_value()
-        make_example(value)
-        right_answer = play_games(value)
-        user_answer = ask_user()
-        counter, flag = compare_answers(counter, user_answer, right_answer)
-        if counter == 3:
-            print('Congratulations {}'.format(name))
-        if flag == 1:
-            break
+	name = welcome_user()
+	counter = 0
+	print('Answer "Yes" if given number is even. Otherwise answer "No".')
+	while counter < 3:
+		value = get_random_value()
+		make_example(value)
+		right_answer = play_games(value)
+		user_answer = ask_user()
+		counter, flag = compare_answers(counter, user_answer, right_answer)
+		if counter == 3:
+			return ('Congratulations, {}!'.format(name))
+		if flag == 1:
+			print("{} is wrong answer ;(. Correct answer was {}. \nLet's try again, {}!".format(user_answer, right_answer[1], name))
+			break
+
 
 if __name__ == '__main__':
 	main()

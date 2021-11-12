@@ -4,19 +4,21 @@ from brain_games.cli import welcome_user
 
 
 def main():
-    name = welcome_user()
-    flag = 1
-    counter = 0
-    while counter < 3:
-        progression, lenght = generate_progression()
-        random_value = get_random_value(lenght)
-        right_answer = make_example(progression, random_value)
-        user_answer = ask_user()
-        counter, flag = compare_answer(right_answer, user_answer, counter, flag)
-        if counter == 3:
-            print('Congratulations {}'.format(name))
-        if flag == 1:
-            break
+	name = welcome_user()
+	flag = 1
+	print('What number is missing in the progression?')
+	counter = 0
+	while counter < 3:
+		progression, lenght = generate_progression()
+		random_value = get_random_value(lenght)
+		right_answer = make_example(progression, random_value)
+		user_answer = ask_user()
+		counter, flag = compare_answer(right_answer, user_answer, counter, flag)
+		if counter == 3:
+			print('Congratulations, {}!'.format(name))
+		if flag == 1:
+			print("{} is wrong answer ;(. Correct answer was {}. \nLet's try again, {}!".format(user_answer, right_answer, name))
+			break
 
 
 def generate_progression():
@@ -31,7 +33,7 @@ def get_random_value(lenght):
 
 
 def make_example(progression, random_value):
-    print('What number is missing in the progression?')
+    print('Question: ')
     for index, value in enumerate(progression):
         if index == random_value:
             right_answer = value
@@ -41,18 +43,17 @@ def make_example(progression, random_value):
 
 
 def ask_user():
-    user_answer = prompt.string("\n Your answer: ")
+    user_answer = prompt.string("\nYour answer: ")
     return user_answer
 
 
 def compare_answer(right_answer, user_answer, counter, flag):
-    if right_answer == int(user_answer):
+    if str(right_answer) == user_answer:
         print('Correct!')
         counter += 1
         flag = 0
         return counter, flag
     else:
-        print('Sorry, right answer was {}, try again!'.format(right_answer))
         flag = 1
         return counter, flag
 

@@ -31,7 +31,6 @@ def compare_answers(counter, user_answer, right_answer, flag=0):
         counter += 1
         return counter, flag
     if user_answer not in right_answer:
-        print('Try again, right answer was {}'.format(right_answer[0]))
         flag = 1
         return counter, flag
 
@@ -47,8 +46,9 @@ def main():
         user_answer = ask_user()
         counter, flag = compare_answers(counter, user_answer, right_answer)
         if counter == 3:
-            print('Congratulations {}'.format(name))
+            print('Congratulations, {}!'.format(name))
         if flag == 1:
+			print("{} is wrong answer ;(. Correct answer was {}. \nLet's try again, {}!".format(user_answer, right_answer[1], name))
             break
 
 
