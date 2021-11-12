@@ -3,46 +3,52 @@ import prompt
 from brain_games.cli import welcome_user
 
 
-a = []
-diction = {}
-name = welcome_user()
+def get_random_value():
+    return randint(0, 666)
 
 
-def generate_list():
-    for i in range(3):
-        a.append(randint(1, 100))
-    return a
+def make_example(value):
+    print("Question: {}".format(value))
 
 
-def generate_dict():
-    for i in a:
-        if i % 2 == 0:
-            diction[i] = 'yes'
-        else:
-            diction[i] = 'no'
+def ask_user():
+    user_answer = prompt.string("Your answer: ")
+    return user_answer
 
 
-def play_games(name):
-    print("Answer 'yes' if the number is even, otherwise answer 'no'")
-    counter = 0
-    for i in a:
-        print("Question: " + str(i))
-        user_answer = prompt.string("Your answer: ")
-        if user_answer == diction[i]:
-            print('Correct')
-            counter += 1
-            if counter == 3:
-                print("Congratulations, {}!".format(name))
-        else:
-            print('Uuups, right answer was {}, try again!'.format(diction[i]))
-            break
+def compare_answers(counter, user_answer, right_answer, flag=0):
+    if user_answer in right_answer:
+        print('Correct!')
+        counter += 1
+        return counter, flag
+    if user_answer not in right_answer:
+        print('Try again, right answer was {}'.format(right_answer[0]))
+        flag = 1
+        return counter, flag
+
+
+def play_games(value):
+	if value % 2 == 0:
+		right_answer = ('Yes','yes')
+	else:
+		right_answer = ('No', 'no')
+	return right_answer
 
 
 def main():
-	generate_list()
-	generate_dict()
-	play_games(name)
-
+    name = welcome_user()
+    counter = 0
+    print('Answer "Yes" if given number is even. Otherwise answer "No".')
+    while counter < 3:
+        value = get_random_value()
+        make_example(value)
+        right_answer = play_games(value)
+        user_answer = ask_user()
+        counter, flag = compare_answers(counter, user_answer, right_answer)
+        if counter == 3:
+            print('Congratulations {}'.format(name))
+        if flag == 1:
+            break
 
 if __name__ == '__main__':
 	main()
