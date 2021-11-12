@@ -8,7 +8,7 @@ classifiers = [
     ]
 authors = ["shiffter <vanfre93@gmail.com>"]
 packages = [{ include = "brain_games" },]
-repository = ["https://github.com/shiffter/python-project-lvl1"]
+repository = "https://github.com/shiffter/python-project-lvl1"
 
 
 [tool.poetry.scripts]
