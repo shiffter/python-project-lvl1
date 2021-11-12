@@ -1,11 +1,14 @@
 [tool.poetry]
 name = "hexlet-code"
 version = "0.1.0"
-description = ""
-authors = ["Your Name <you@example.com>"]
-packages = [
-  { include = "brain_games" },
-]
+description = "Consol game package"
+classifiers = [
+    "Topic :: Software Development :: Build Tools",
+    "Topic :: Software Development :: Libraries :: Python Modules"
+    ]
+authors = ["shiffter <vanfre93@gmail.com>"]
+packages = [{ include = "brain_games" },]
+repository = ["https://github.com/shiffter/python-project-lvl1"]
 
 
 [tool.poetry.scripts]

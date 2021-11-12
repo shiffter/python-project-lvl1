@@ -14,17 +14,17 @@ def prime_noun(value):
 
 def get_random_value():
     return randint(0, 666)
-    
- 
+
+
 def make_example(value):
     print("Question: {}".format(value))
-    
-    
+
+
 def ask_user():
     user_answer = prompt.string("Your answer: ")
     return user_answer
-    
-    
+
+
 def compare_answers(counter, user_answer, right_answer, flag=0):
     if user_answer in right_answer:
         print('Correct!')
@@ -34,7 +34,6 @@ def compare_answers(counter, user_answer, right_answer, flag=0):
         print('Try again, right answer was {}'.format(right_answer[0]))
         flag = 1
         return counter, flag
-
 
 
 def main():
@@ -51,8 +50,7 @@ def main():
             print('Congratulations {}'.format(name))
         if flag == 1:
             break
-            
-            
+
+
 if __name__ == '__main__':
 	main()
-

@@ -22,6 +22,3 @@ brain-even:
 uninstall:
 	pip uninstall hexlet-code
 	
-	
-shifter:
-	print('shifter is king')

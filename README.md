@@ -26,12 +26,30 @@ Example:
 
 [![asciicast](https://asciinema.org/a/439890.svg)](https://asciinema.org/a/439890)
 
-brain-gcd(игра общий делитель)
-https://asciinema.org/a/441158
 
-brain-progression(арифметическая прогрессия)
-https://asciinema.org/a/445185
+### GCD
 
-brain-prime(простое ли число)
-https://asciinema.org/a/448609
+Find greatest common divider  
+`brain-gcd` to start the game.
+
+Example:
+[![asciicast](https://asciinema.org/a/441158.svg)](https://asciinema.org/a/441158)
+
+
+### Arithmetic progression 
+
+Find the missing number 
+`brain-progression` to start the game.
+
+Example: 
+[![asciicast](https://asciinema.org/a/445185.svg)](https://asciinema.org/a/445185)
+
+
+### Prime noun
+
+Is it ptime number?
+`brain-prime` to start the game.
+
+Example:
+[![asciicast](https://asciinema.org/a/448609.svg)](https://asciinema.org/a/448609)
 

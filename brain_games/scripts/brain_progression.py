@@ -26,7 +26,7 @@ def generate_progression():
 
 
 def get_random_value(lenght):
-    random_value = randint(0, lenght-1)
+    random_value = randint(0, lenght - 1)
     return random_value
 
 

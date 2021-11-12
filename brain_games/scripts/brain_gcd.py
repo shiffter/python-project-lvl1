@@ -1,5 +1,4 @@
 import random
-from random import randint
 import prompt
 from brain_games.cli import welcome_user
 
@@ -46,7 +45,7 @@ def main():
     counter = 0
     while counter < 3:
         value1, value2 = get_random_value()
-        make_example(value1,value2)
+        make_example(value1, value2)
         right_answer = nod(value1, value2)
         user_answer = ask_user()
         counter, flag = compare_answers(counter, user_answer, right_answer)
@@ -58,5 +57,3 @@ def main():
 
 if __name__ == '__main__':
 	main()
-
-	
