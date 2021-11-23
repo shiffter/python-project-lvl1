@@ -1,4 +1,5 @@
-from brain_games.cli import welcome_user, ask_username, show_error_mistake, congrats_user, ask_user, compare_answers
+from brain_games.cli import welcome_user, ask_username, show_error_mistake
+from brain_games.cli import congrats_user, ask_user, compare_answers
 
 
 def engine(game):

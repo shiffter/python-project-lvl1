@@ -12,7 +12,12 @@ def ask_username():
 
 
 def show_error_mistake(user_answer, right_answer, name):
-    print("{} is wrong answer ;(. Correct answer was {}.\nLet's try again, {}!".format(user_answer, right_answer, name))
+	message_error = ("'{}' is wrong answer ;(.").format(user_answer)
+	right_reply = ("Correct answer was '{}'.").format(right_answer)
+	support = ("Let's try again, {}!").format(name)
+	print(message_error,right_reply)
+	print(support)
+    
 
 
 def congrats_user(name):
