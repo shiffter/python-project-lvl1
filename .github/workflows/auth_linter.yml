@@ -7,4 +7,4 @@ jobs:
 			- name: checkout repo
 			  uses: actions/checkout@v2
             - name: linter-checking
-              run: ./github
+              run: make lint
