@@ -7,6 +7,8 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2
       - name: install dependencies
-        run: pip install poetry
+        run: |
+          pip install poetry
+          make install
       - name: linter-checking
         run: make lint
