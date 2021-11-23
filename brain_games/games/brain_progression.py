@@ -13,6 +13,6 @@ def get_required_values():
         secret_progression.append(value)
         if value == secret_value:
             secret_progression[index] = '..'
-    task = ' '.join(map(str, secret_progression))
+    task = "Question: {}".format(' '.join(map(str, secret_progression)))
     right_answer = secret_value
     return task, right_answer
